@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "coincident-app"
+version = "1.0.0"
+description = "One round of Krum over the coincident fixture"
+dependencies = ["flwr[simulation]==1.33.0", "numpy>=2.0.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["coincident_app"]
+
+[tool.flwr.app]
+publisher = "walkthrough"
+
+[tool.flwr.app.components]
+serverapp = "coincident_app.server_app:app"
+clientapp = "coincident_app.client_app:app"
+
+[tool.flwr.app.config]
+num-server-rounds = 1
+
+
+#######################################################################
+# CONFIGURATION MIGRATION NOTICE:
+#
+# What was previously called "federation config" for SuperLink
+# connections in pyproject.toml has been renamed and moved.
+#
+# These settings are now **SuperLink connection configuration**
+# and are defined in the Flower configuration file.
+#
+# The entries below are commented out intentionally and are kept
+# only as a migration reference.
+#
+# Docs: https://flower.ai/docs/framework/ref-flower-configuration.html
+#######################################################################
+
+# [tool.flwr.federations]
+# default = "local-simulation"
+
+# [tool.flwr.federations.local-simulation]
+# options.num-supernodes = 5

@@ -1,0 +1,52 @@
+case,declared,executed,fixture,declared_rule_ran,claim,verdict,max_abs_diff,reason
+A/E0,krum,krum,coincident,True,C1,consistent,,declares krum with f=1 over 5 clients
+A/E0,krum,krum,coincident,True,C2,unable_to_determine,,no recorded output to re-perform against
+A/E0,krum,krum,coincident,True,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+A/E1,krum,krum,coincident,True,C1,consistent,,declares krum with f=1 over 5 clients
+A/E1,krum,krum,coincident,True,C2,unable_to_determine,,no client submissions; the decision cannot be re-performed
+A/E1,krum,krum,coincident,True,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+A/E2,krum,krum,coincident,True,C1,consistent,0.0,declares krum with f=1 over 5 clients
+A/E2,krum,krum,coincident,True,C2,consistent,0.0,re-performance reproduces the recorded aggregate; max abs difference 0.000e+00
+A/E2,krum,krum,coincident,True,C3,unable_to_determine,0.0,no runtime record; execution is neither supported nor contradicted
+A/E3,krum,krum,coincident,True,C1,consistent,0.0,declares krum with f=1 over 5 clients
+A/E3,krum,krum,coincident,True,C2,consistent,0.0,re-performance reproduces the recorded aggregate; max abs difference 0.000e+00
+A/E3,krum,krum,coincident,True,C3,consistent,0.0,runtime record contains select_multikrum; holds only if the recorder is sound
+B/E0,krum,fedavg,coincident,False,C1,consistent,,declares krum with f=1 over 5 clients
+B/E0,krum,fedavg,coincident,False,C2,unable_to_determine,,no recorded output to re-perform against
+B/E0,krum,fedavg,coincident,False,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+B/E1,krum,fedavg,coincident,False,C1,consistent,,declares krum with f=1 over 5 clients
+B/E1,krum,fedavg,coincident,False,C2,unable_to_determine,,no client submissions; the decision cannot be re-performed
+B/E1,krum,fedavg,coincident,False,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+B/E2,krum,fedavg,coincident,False,C1,consistent,0.0,declares krum with f=1 over 5 clients
+B/E2,krum,fedavg,coincident,False,C2,consistent,0.0,re-performance reproduces the recorded aggregate; max abs difference 0.000e+00
+B/E2,krum,fedavg,coincident,False,C3,unable_to_determine,0.0,no runtime record; execution is neither supported nor contradicted
+B/E3,krum,fedavg,coincident,False,C1,consistent,0.0,declares krum with f=1 over 5 clients
+B/E3,krum,fedavg,coincident,False,C2,consistent,0.0,re-performance reproduces the recorded aggregate; max abs difference 0.000e+00
+B/E3,krum,fedavg,coincident,False,C3,contradicted,0.0,runtime record does not contain select_multikrum
+C/E0,krum,fedavg,divergent,False,C1,consistent,,declares krum with f=1 over 5 clients
+C/E0,krum,fedavg,divergent,False,C2,unable_to_determine,,no recorded output to re-perform against
+C/E0,krum,fedavg,divergent,False,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+C/E1,krum,fedavg,divergent,False,C1,consistent,,declares krum with f=1 over 5 clients
+C/E1,krum,fedavg,divergent,False,C2,unable_to_determine,,no client submissions; the decision cannot be re-performed
+C/E1,krum,fedavg,divergent,False,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+C/E2,krum,fedavg,divergent,False,C1,consistent,1.62,declares krum with f=1 over 5 clients
+C/E2,krum,fedavg,divergent,False,C2,contradicted,1.62,re-performance differs from the recorded aggregate by 1.620e+00
+C/E2,krum,fedavg,divergent,False,C3,unable_to_determine,1.62,no runtime record; execution is neither supported nor contradicted
+C/E3,krum,fedavg,divergent,False,C1,consistent,1.62,declares krum with f=1 over 5 clients
+C/E3,krum,fedavg,divergent,False,C2,contradicted,1.62,re-performance differs from the recorded aggregate by 1.620e+00
+C/E3,krum,fedavg,divergent,False,C3,contradicted,1.62,runtime record does not contain select_multikrum
+D/E0,krum,krum,divergent,True,C1,consistent,,declares krum with f=1 over 5 clients
+D/E0,krum,krum,divergent,True,C2,unable_to_determine,,no recorded output to re-perform against
+D/E0,krum,krum,divergent,True,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+D/E1,krum,krum,divergent,True,C1,consistent,,declares krum with f=1 over 5 clients
+D/E1,krum,krum,divergent,True,C2,unable_to_determine,,no client submissions; the decision cannot be re-performed
+D/E1,krum,krum,divergent,True,C3,unable_to_determine,,no runtime record; execution is neither supported nor contradicted
+D/E2,krum,krum,divergent,True,C1,consistent,0.0,declares krum with f=1 over 5 clients
+D/E2,krum,krum,divergent,True,C2,consistent,0.0,re-performance reproduces the recorded aggregate; max abs difference 0.000e+00
+D/E2,krum,krum,divergent,True,C3,unable_to_determine,0.0,no runtime record; execution is neither supported nor contradicted
+D/E3,krum,krum,divergent,True,C1,consistent,0.0,declares krum with f=1 over 5 clients
+D/E3,krum,krum,divergent,True,C2,consistent,0.0,re-performance reproduces the recorded aggregate; max abs difference 0.000e+00
+D/E3,krum,krum,divergent,True,C3,consistent,0.0,runtime record contains select_multikrum; holds only if the recorder is sound
+tampered/E3,krum,krum,divergent,True,C1,invalid_bundle,,output.json digest does not match the manifest
+tampered/E3,krum,krum,divergent,True,C2,invalid_bundle,,output.json digest does not match the manifest
+tampered/E3,krum,krum,divergent,True,C3,invalid_bundle,,output.json digest does not match the manifest

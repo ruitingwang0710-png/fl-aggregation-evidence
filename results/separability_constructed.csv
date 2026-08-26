@@ -1,0 +1,13 @@
+n_clients,rule,gap,bit_identical
+5,krum,0.000000e+00,True
+5,multikrum3,0.000000e+00,True
+5,median,0.000000e+00,True
+5,trimmed,0.000000e+00,True
+7,krum,2.220446e-16,False
+7,multikrum3,2.220446e-16,False
+7,median,2.220446e-16,False
+7,trimmed,2.220446e-16,False
+11,krum,2.220446e-16,False
+11,multikrum3,2.220446e-16,False
+11,median,2.220446e-16,False
+11,trimmed,2.220446e-16,False

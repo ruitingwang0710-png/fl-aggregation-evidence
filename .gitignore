@@ -1,0 +1,28 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Manuscript sources and build artefacts (kept out of the artefact repository)
+paper.tex
+paper.pdf
+paper_submission.tex
+paper_submission.pdf
+references.bib
+openreview-fields.md
+# private working notes
+*_REVIEW*.md
+*_CHANGELOG*.md
+*_AUDIT*.md
+*_REPORT*.md
+*.aux
+*.bbl
+*.log
+*.out
+*.synctex.gz
