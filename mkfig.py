@@ -25,11 +25,16 @@ fig, (hi, lo) = plt.subplots(2, 1, figsize=(5.2, 3.6), sharex=True,
 hi.set_yscale("log")
 for r in RULES:
     hi.plot(sig, curves[r], marker=MK[r], color=COL[r], lw=1.8, ms=4.5, mew=0,
-            zorder=3, clip_on=False)
-    hi.annotate(LABEL[r], xy=(sig[0], curves[r][0]), xytext=(7, 0),
-                textcoords="offset points", ha="left", va="center",
-                fontsize=7.2, color=COL[r], zorder=4)
+            zorder=3, clip_on=False, label=LABEL[r])
 hi.set_ylim(6e-4, 4e0)
+# R1: the four series were previously labelled inline at the left end, where the
+# labels sat on top of the curves.  A legend in the empty lower-left corner is
+# legible at print size and touches no data.
+leg = hi.legend(loc="lower left", fontsize=7.6, frameon=False,
+                handlelength=1.6, handletextpad=0.5, labelspacing=0.38,
+                borderaxespad=0.35)
+for t, r in zip(leg.get_texts(), RULES):
+    t.set_color(COL[r])
 hi.set_ylabel(r"$\|$declared rule $-$ FedAvg$\|_\infty$", fontsize=8.5)
 hi.yaxis.set_label_coords(-0.105, 0.30)
 hi.text(0.985, 0.90, "random honest configurations", transform=hi.transAxes,
