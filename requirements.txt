@@ -1,0 +1,6 @@
+# Pinned versions. Verified on Linux with Python 3.13: Track 1 regenerates
+# results/ and every evidence bundle byte for byte.
+flwr[simulation]==1.33.0
+numpy==2.4.4
+scikit-learn==1.8.0
+matplotlib==3.10.7

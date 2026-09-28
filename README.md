@@ -14,11 +14,26 @@ reproducible by inspection.
 i.i.d. and Dirichlet partitions. All seeds fixed. Scripts and per-run results are
 under `m1_*` and `m1_results/`.
 
+## Reproduce with Docker (one command)
+
+```bash
+docker build -t fl-aggregation-evidence .
+docker run --rm fl-aggregation-evidence            # Track 1
+docker run --rm fl-aggregation-evidence track2     # Track 2
+docker run --rm fl-aggregation-evidence all        # both
+```
+
+The image pins Python 3.13 and the versions in `requirements.txt`. Under that
+environment Track 1 regenerates `results/` and every evidence bundle byte for
+byte. The interpreter version matters for the E3 execution record: from Python
+3.12 comprehensions no longer run in their own frame (PEP 709), so under 3.11
+the recorded function list is longer, while every verdict is unchanged.
+
 ## Reproduce — Track 1 (seconds, one CPU)
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install "flwr[simulation]==1.33.0" numpy
+pip install -r requirements.txt
 
 python evidence.py         # builds every bundle, verifies it, writes results/summary.csv
 python check_ab.py         # C2 differences, and the A/B byte-level comparison
@@ -29,8 +44,6 @@ python separability.py     # substitution gap vs. re-implementation noise floor
 ## Reproduce — Track 2 (about ten minutes, two cores)
 
 ```bash
-pip install scikit-learn
-
 python m1_run.py           # 31 federated training runs on the handwritten-digits set
 python m1_analyse.py       # writes m1_results/*.csv
 python mkfig_m1.py         # regenerates figures/reachability.pdf
