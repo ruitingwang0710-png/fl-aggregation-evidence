@@ -13,3 +13,15 @@ abstract: >-
   aggregation leaves behind.
 version: 0.1.0
 license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Checking the Output Does Not Check the Aggregator: A Bit-Exact Counterexample in Federated Learning"
+  authors:
+    - family-names: Wang
+      given-names: Ruiting
+  year: 2026
+  conference:
+    name: "TAE (Trust-AI-Eval): Can We Trust AI Evaluation? (NeurIPS 2026 workshop, non-archival)"
+    city: Sydney
+    country: AU
+  notes: "Accepted as a poster."

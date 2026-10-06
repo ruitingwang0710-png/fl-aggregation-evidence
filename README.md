@@ -14,6 +14,19 @@ reproducible by inspection.
 i.i.d. and Dirichlet partitions. All seeds fixed. Scripts and per-run results are
 under `m1_*` and `m1_results/`.
 
+## Paper
+
+This repository is the artefact for:
+
+> Ruiting Wang. **Checking the Output Does Not Check the Aggregator: A Bit-Exact
+> Counterexample in Federated Learning.** Accepted as a poster at *TAE
+> (Trust-AI-Eval): Can We Trust AI Evaluation?*, a NeurIPS 2026 workshop
+> (non-archival), Sydney, December 2026.
+
+Track 1 is the controlled counterexample the paper is built on; Track 2 is the
+reachability study behind its Figures 1–2 and Table 3; `separability.py` and
+`results/separability_*.csv` are the noise-floor sweep. See `CITATION.cff`.
+
 ## Reproduce with Docker (one command)
 
 ```bash
